@@ -1,5 +1,3 @@
----
-
 ## 📚 Halaman 1, 2, 3 (Materi)
 
 > Oke, berikut adalah rangkuman materi kuliah yang disajikan, dibuat lebih mudah dipahami dengan bahasa Indonesia yang jelas:
