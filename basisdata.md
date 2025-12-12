@@ -239,3 +239,52 @@ Panduan membangun aplikasi perpustakaan menggunakan **MySQL** (basis data) dan *
     3. **Membuat Form (Antarmuka Input):** Gunakan `Form Wizard` untuk membuat form input data untuk setiap tabel.
     4. **Membuat Query & Report (Laporan):** Gunakan `Query Wizard` untuk menggabungkan data dan `Report Wizard` untuk membuat laporan siap cetak.
     5. **Finishing (Switchboard & Pengaturan):** Buat menu utama (`Switchboard`) dan atur `Access Options` agar aplikasi terlihat profesional.
+
+
+## Latihan: 45 Pertanyaan & Jawaban Singkat
+
+1. Apa itu primary key? — Atribut unik yang mengidentifikasi baris dalam tabel.
+2. Apa itu foreign key? — Kolom yang menunjuk ke primary key di tabel lain untuk menjaga referensial integritas.
+3. Jelaskan perbedaan `CHAR` dan `VARCHAR`. — `CHAR` panjang tetap; `VARCHAR` panjang variabel.
+4. Apa fungsi `INDEX`? — Mempercepat pencarian/scan pada kolom tertentu.
+5. Apa itu normalisasi? — Proses pengaturan tabel untuk mengurangi redundansi.
+6. Sebutkan 1NF. — Kolom hanya mengandung nilai atomik, tidak ada grup berulang.
+7. Sebutkan 2NF. — 1NF + semua atribut non-kunci bergantung penuh pada primary key.
+8. Sebutkan 3NF. — 2NF + tidak ada ketergantungan transitif antar atribut non-kunci.
+9. Apa itu denormalisasi? — Sengaja menambah redundansi untuk meningkatkan performa baca.
+10. Apa itu transaksi? — Sekumpulan operasi SQL yang dieksekusi atomik (commit/rollback).
+11. Jelaskan ACID — Atomicity, Consistency, Isolation, Durability.
+12. Perintah untuk menyimpan perubahan transaksi? — `COMMIT`.
+13. Perintah untuk membatalkan transaksi? — `ROLLBACK`.
+14. Apa itu `JOIN`? — Menggabungkan baris dari dua atau lebih tabel berdasarkan kondisi.
+15. Bedakan `INNER JOIN` dan `LEFT JOIN`. — `INNER` hanya baris cocok; `LEFT` semua baris kiri + cocok kanan.
+16. Bagaimana menambahkan kolom pada tabel? — `ALTER TABLE t ADD COLUMN c TYPE;`.
+17. Cara membuat index? — `CREATE INDEX idx_name ON table(col);`.
+18. Fungsi `GROUP BY`? — Mengelompokkan baris untuk agregasi.
+19. Fungsi `HAVING`? — Menyaring hasil agregat setelah `GROUP BY`.
+20. Bagaimana memilih 10 baris teratas? — `SELECT ... LIMIT 10` (MySQL) atau `SELECT TOP 10` (SQL Server).
+21. Apa itu `VIEW`? — Virtual table hasil query; tidak selalu menyimpan data fisik.
+22. Apa perbedaan view dan materialized view? — Materialized view menyimpan hasil fisik; view biasanya tidak.
+23. Jelaskan isolation pada ACID. — Menjamin transaksi terisolasi agar perubahan sementara tidak terlihat oleh transaksi lain.
+24. Sebutkan isolation levels biasa. — READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE.
+25. Apa itu deadlock? — Kondisi dua transaksi saling menunggu resource yang di-lock satunya.
+26. Bagaimana menghindari deadlock? — Desain transaksi singkat, akses resource dalam urutan konsisten.
+27. Apa itu indeks unik? — Index yang melarang nilai duplikat pada kolom.
+28. Bagaimana menyimpan file biner? — Gunakan tipe `BLOB`.
+29. Apa itu `AUTO_INCREMENT`? — Mekanisme menghasilkan nilai unik otomatis untuk primary key.
+30. Apa perbedaan `TRUNCATE` dan `DELETE`? — `TRUNCATE` cepat dan reset counter; `DELETE` dapat memakai `WHERE`.
+31. Bagaimana menganalisis query lambat? — Gunakan `EXPLAIN` untuk melihat rencana eksekusi.
+32. Apa itu foreign key cascade? — `ON DELETE/UPDATE CASCADE` menghapus/memperbarui baris terkait otomatis.
+33. Jelaskan replikasi master-slave. — Master menerima write; slave menerima salinan read-only dari master.
+34. Apa itu sharding? — Partisi horizontal data ke server berbeda berdasarkan key.
+35. Kapan menggunakan partisi vertikal? — Saat memisahkan kolom besar dari kolom yang sering dipakai.
+36. Apa itu OLTP vs OLAP? — OLTP: transaksi operasional; OLAP: analitik/warehouse.
+37. Cara backup MySQL sederhana? — `mysqldump -u user -p dbname > dump.sql`.
+38. Apa itu referential integrity? — Konsistensi hubungan antar tabel via FK constraints.
+39. Bagaimana menangani NULL dalam `WHERE`? — Gunakan `IS NULL` atau `IS NOT NULL`.
+40. Contoh `GROUP BY` dengan agregat: — `SELECT dept, COUNT(*) FROM emp GROUP BY dept;`.
+41. Apa fungsi `HAVING COUNT(*) > 1`? — Menyaring grup dengan lebih dari satu baris.
+42. Fungsi agregat untuk non-numerik? — `COUNT()`.
+43. Apa itu constraint `CHECK`? — Membatasi nilai kolom sesuai kondisi (didukung di banyak DBMS).
+44. Bagaimana membuat composite primary key? — `PRIMARY KEY (col1, col2)`.
+45. Singkat soal CAP theorem? — Consistency, Availability, Partition tolerance — pilih trade-off.
